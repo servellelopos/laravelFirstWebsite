@@ -56,7 +56,7 @@ Route::get('/shoutout/{text}', function ($text) {
 
 
 */
-
+/*
 Route::get('/',function (){
 	return view('welcome');
 });
@@ -74,5 +74,18 @@ Route::get('/basic-arithmetic/{operation}/{num1}/{num2}',function ($operation, $
 
 })->name ('basic-arithmetic');
 
+*/
 
+Route::get('/crushes','CrushesController@index');
 
+Route::get(	'/crushes/create','CrushesController@create')->name('crushes.create');
+
+Route::post('/crushes/store','CrushesController@store')->name('crushes.store');
+	
+Route::get(	'/crushes','CrushesController@index')->name( 'crushes.index');
+
+Route::get(	'/crushes/{id}/edit','CrushesController@edit')->name('crushes.id.edit');
+
+Route::post( '/crushes/{id}/update','CrushesController@update')->name('crushes.id.update');
+
+Route::get(	'/crushes/{id}/destroy','CrushesController@destroy')->name('crushes.id.destroy');
